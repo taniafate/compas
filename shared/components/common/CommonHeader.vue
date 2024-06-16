@@ -6,16 +6,16 @@ const { device } = useMedia();
   <header class="header-container">
     <div class="header">
       <div class="header-navigation">
-        <NuxtLink to="/">
+        <NuxtLink to="/" active-class="active">
           <img
-            :width="device === 'desktop' ? '119px' : '62px'"
-            :height="device === 'desktop' ? '26px' : '14px'"
+            :width="device === 'mobile' ? '62px' : '119px'"
+            :height="device === 'mobile' ? '14px' : '26px'"
             src="/public/AppLogo.svg"
             alt="Логотип сайта"
           >
         </NuxtLink>
-        <NuxtLink to="/tariffs" class="header-link">Тарифы</NuxtLink>
-        <NuxtLink to="/contacts" class="header-link">Контакты</NuxtLink>
+        <NuxtLink to="/tariffs" class="header-link" active-class="active">Тарифы</NuxtLink>
+        <NuxtLink to="/contacts" class="header-link" active-class="active">Контакты</NuxtLink>
       </div>
       
       <div class="header-controls">
@@ -36,7 +36,7 @@ const { device } = useMedia();
   width: 100%;
   height: 60px;
   background: linear-gradient(90deg, #000000 30%, #1C2734 73%);
-  color: rgba(255, 255, 255, 1);
+  color: var(--font-color-secondary);
   font-size: var(--link-fs);
 }
 
@@ -47,6 +47,7 @@ const { device } = useMedia();
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 10px;
 }
 
 .header-link:hover {
@@ -83,6 +84,11 @@ const { device } = useMedia();
     color: var(--font-color-secondary);
     background: var(--button-hover-color);
   }
+}
+
+.active {
+  color: var(--button-hover-color);
+  text-decoration: underline var(--button-hover-color);
 }
 
 @media (max-width: 768px) {

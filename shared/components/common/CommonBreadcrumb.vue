@@ -32,4 +32,11 @@
 .breadcrumb-active-item {
   color: rgba(143, 143, 143, 1);
 }
+
+@media (max-width: 768px) {
+  .breadcrumb-container {
+    gap: 5px;
+    font-size: 11px;
+  }
+}
 </style>

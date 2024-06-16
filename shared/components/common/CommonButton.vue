@@ -63,6 +63,11 @@ function onClick() {
 @media (max-width: 768px) {
   .common-button {
     padding: 11px 10px;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
   }
 }
 </style>

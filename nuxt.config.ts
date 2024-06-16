@@ -17,6 +17,8 @@ export default defineNuxtConfig({
   },
   modules: [
     'nuxt-icon',
+    '@pinia/nuxt',
+    'nuxt-swiper',
     ['@nuxtjs/google-fonts', {
       families: {
         'PT Sans': [400, 700],

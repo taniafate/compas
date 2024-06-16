@@ -10,6 +10,18 @@ function onClick() {
 }
 
 const { device } = useMedia();
+
+const videoModalWidth = computed(() => {
+  if(device.value === 'desktop') {
+    return '960px'
+  }
+  if(device.value === 'tablet') {
+    return '532px'
+  }
+  if(device.value === 'mobile') {
+    return '320px'
+  }
+})
 </script>
 
 <template>
@@ -25,25 +37,9 @@ const { device } = useMedia();
         to="https://www.youtube.com/watch?v=_JEe1LViIlk"
         target="_blank"
         rel="noopener noreferrer"
-        v-if="device === 'mobile'"
       >
         <img
-          width="375px"
-          height="490px"
-          src="/public/ModalPreviewMobile.jpg"
-          alt="Превью видео"
-        >
-      </NuxtLink>
-      <NuxtLink
-        class="video-modal-link"
-        to="https://www.youtube.com/watch?v=_JEe1LViIlk"
-        target="_blank"
-        rel="noopener noreferrer"
-        v-else
-      >
-        <img
-          width="960px"
-          height="532px"
+          :width="videoModalWidth"
           src="/public/ModalPreview.jpg"
           alt="Превью видео"
         >

@@ -39,13 +39,15 @@ function onClick() {
   height: 45px;
   background: rgb(162, 255, 162);
   border-radius: 7px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
 }
 
 .success-feedback-modal-title {
-  margin-left: 38%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .incomplete-feedback-modal {
@@ -55,13 +57,15 @@ function onClick() {
   height: 45px;
   background: rgb(255, 194, 194);
   border-radius: 7px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
   align-items: center;
 }
 
 .incomplete-feedback-modal-title {
-  margin-left: 31%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .success-feedback-modal-button {
@@ -71,19 +75,13 @@ function onClick() {
 
 @media (max-width: 768px) {
   .success-feedback-modal {
-    width: 375px;
-  }
-
-  .success-feedback-modal-title {
-    margin-left: 30%;
+    width: 300px;
+    top: 114px;
   }
 
   .incomplete-feedback-modal {
-    width: 375px;
-  }
-
-  .incomplete-feedback-modal-title {
-    margin-left: 17%;
+    width: 300px;
+    top: 114px;
   }
 }
 </style>

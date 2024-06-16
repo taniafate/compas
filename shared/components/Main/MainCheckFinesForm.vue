@@ -61,6 +61,13 @@ const isLoading = defineModel('isLoading', { type: Boolean, required: true });
 </template>
 
 <style lang="scss" scoped>
+.check-fines-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .auto-number-field {
   width: 320px;
   display: flex;
@@ -86,12 +93,6 @@ const isLoading = defineModel('isLoading', { type: Boolean, required: true });
   margin-bottom: 15px;
 }
 
-.check-fines-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 .check-fines-form-input {
   box-sizing: border-box;
   font-size: 18px;
@@ -114,5 +115,46 @@ const isLoading = defineModel('isLoading', { type: Boolean, required: true });
   display: flex;
   align-items: center;
   gap: 21px;
+}
+
+@media (max-width: 768px) {
+  .check-fines-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 16px;
+  }
+
+  .auto-number-field {
+    width: 100%;
+  }
+
+  .region-field {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .license-field {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .check-fines-form-input {
+    font-size: 15px;
+    height: 36px;
+    margin-top: 2px;
+    padding: 2px 4px;
+  }
+
+  .check-fines-form-buttons {
+    gap: 14px;
+  }
+
+  .check-fines-form-buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 </style>

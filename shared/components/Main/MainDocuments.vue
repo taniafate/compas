@@ -1,21 +1,5 @@
 <script setup lang="ts">
-const documents = [
-  {
-    src: '/documents/contract',
-    title: 'Лицензионный договор',
-    description: 'Механизм разбрасывания веерного типа приводится в действие от колес тележки, отличается простой и надежной конструкцией, не нуждается в смазке.'
-  },
-  {
-    src: '/documents/policy',
-    title: 'Политика обработки персональных данных',
-    description: 'Радиус разброса ПГМ составляет до 3 метров и может регулироваться.'
-  },
-  {
-    src: '/documents/payment',
-    title: 'Информация об оплате',
-    description: 'Десятипозиционный переключатель дозировки расположен на ручке тележки и позволяет очень точно регулировать объем рассыпаемого реагента с учетом его массы и фракции.'
-  }
-]
+
 </script>
 
 <template>
@@ -23,39 +7,7 @@ const documents = [
     <h2 class="documents-title">
       Документы
     </h2>
-    <div class="slider-list">
-      <div class="list-item" v-for="{ src, title, description } in documents">
-        <div class="item-content">
-          <h4 class="content-title">{{ title }}</h4>
-          <p class="content-description">{{ description }}</p>
-        </div>
-        <NuxtLink :to="src" class="item-link">Перейти</NuxtLink>
-      </div>
-      <div class="slider-buttons">
-        <button class="slider-button-left">
-          <img
-            width="40px"
-            height="80px"
-            src="/public/Slider-Button-Left.svg"
-            alt="Кнопка слайдера слева"
-          >
-        </button>
-        <button class="slider-button-right">
-          <img
-            width="40px"
-            height="80px"
-            src="/public/Slider-Button-Right.svg"
-            alt="Кнопка слайдера слева"
-          >
-        </button>
-      </div>
-    </div>
-    <img
-        width="22px"
-        height="10px"
-        src="/public/Slider-Indicator.svg"
-        alt="Индикатор слайдера"
-      >
+    <MainSlider />
   </section>
 </template>
 
@@ -97,26 +49,6 @@ const documents = [
   justify-content: space-between;
 }
 
-.slider-buttons {
-  position: absolute;
-  display: flex;
-  gap: 1164px - 80px;
-}
-
-.slider-button-left {
-
-  &:hover {
-    filter: drop-shadow(2px 0px 8px rgba(0, 0, 0, 0.15));
-  }
-}
-
-.slider-button-right {
-
-&:hover {
-  filter: drop-shadow(-2px 0px 8px rgba(0, 0, 0, 0.15));
-}
-}
-
 .item-link {
   height: 45px;
   background: var(--button-primary-color);
@@ -149,11 +81,7 @@ const documents = [
   }
 
   .documents-title {
-    margin-bottom: 30px;
-  }
-
-  .slider-list {
-    gap: 12px;
+    margin-bottom: 10px;
   }
 }
 </style>

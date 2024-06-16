@@ -1,6 +1,8 @@
 <script setup lang="ts">
 type FormFeedbackType = 'incomplete' | 'success' | '';
 
+const { device } = useMedia();
+
 const autoNumber = ref('');
 const region = ref('');
 const license = ref('');
@@ -45,6 +47,18 @@ const onSubmit = async () => {
 function closeModal() {
   return formFeedback.value = ''
 }
+
+const heroImageWidth = computed(() => {
+  if(device.value === 'desktop') {
+    return '532px'
+  }
+  if(device.value === 'tablet') {
+    return '532px'
+  }
+  if(device.value === 'mobile') {
+    return '330px'
+  }
+})
 </script>
 
 <template>
@@ -79,8 +93,7 @@ function closeModal() {
 
     <div class="hero-image">
       <img
-        width="532.18px"
-        height="335px"
+        :width="heroImageWidth"
         src="/public/HeroImage.webp"
         alt="Изображение ноутбука"
       >
@@ -94,6 +107,8 @@ function closeModal() {
   justify-content: space-between;
   margin-top: 79px;
   margin-bottom: 98px;
+  gap: 20px;
+  
 }
 
 .hero-content {
@@ -112,13 +127,28 @@ function closeModal() {
   margin-top: 16px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .hero-container {
     margin-top: 24px;
     margin-bottom: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
   }
-  .hero-image {
-    display: none;
+
+  .content-title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    width: 100%;
+  }
+
+  .content-notification {
+    text-align: center;
   }
 }
 </style>

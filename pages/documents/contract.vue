@@ -89,5 +89,9 @@ useHead({
   .contract-subtitle {
     margin-bottom: 5px;
   }
+
+  .contract-list-item {
+    font-size: 15px;
+  }
 }
 </style>

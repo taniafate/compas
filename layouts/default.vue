@@ -14,5 +14,6 @@
   width: 100%;
   max-inline-size: 1164px;
   margin-inline: auto;
+  padding: 0 10px;
 }
 </style>
